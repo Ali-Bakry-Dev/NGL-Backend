@@ -49,11 +49,22 @@ const userSchema = new Schema(
         twoStepVerification: {
             type: Boolean,
             default: false
-        }
+        },
+                isBanned: {
+    type: Boolean,
+    default: false
+},
+
+failedLoginAttempts: {
+    type: Number,
+    default: 0
+}
+        
     },
     {
         timestamps: true
     }
+    
 );
 
 export const User = model("User", userSchema);
